@@ -1,0 +1,68 @@
+:root {
+    --accent-blue: #3b82f6;
+    --dark-bg: #000000;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-bg);
+    color: #f8fafc;
+    overflow-x: hidden;
+}
+
+#bg-animation {
+    background: radial-gradient(circle at center, #050505 0%, #000000 100%);
+}
+
+.page-transition {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.quiz-option {
+    display: block;
+    padding: 1.25rem;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 1.25rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #0A0A0A;
+}
+
+.quiz-option:hover {
+    border-color: rgba(255,255,255,0.2);
+    transform: translateX(4px);
+}
+
+.quiz-option.selected {
+    background: rgba(59,130,246,0.1);
+    border-color: var(--accent-blue);
+    color: white;
+}
+
+.custom-scrollbar::-webkit-scrollbar { width: 3px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
+
+.expandable-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+
+.expandable-card.active .expandable-content {
+    max-height: 1500px;
+    padding-top: 1rem;
+}
+
+.expandable-card .chevron {
+    transition: transform 0.3s ease;
+}
+
+.expandable-card.active .chevron {
+    transform: rotate(180deg);
+}
